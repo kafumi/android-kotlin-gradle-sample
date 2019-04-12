@@ -19,14 +19,21 @@ android {
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
         }
     }
+    dataBinding {
+        isEnabled = true
+    }
 }
 
 dependencies {
     implementation(project(":featureA"))
 
+    // Kotlin
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.3.21")
-    implementation("androidx.appcompat:appcompat:1.0.2")
-    implementation("androidx.core:core-ktx:1.0.1")
+
+    // Debug utilities
+    implementation("com.jakewharton.timber:timber:4.7.1")
+
+    // Test
     testImplementation("junit:junit:4.12")
     androidTestImplementation("androidx.test:runner:1.1.1")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.1.1")
