@@ -20,6 +20,21 @@ android {
     dataBinding {
         isEnabled = true
     }
+    libraryVariants.all {
+        generateBuildConfigProvider?.configure {
+            isEnabled = false
+        }
+    }
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+    }
+}
+
+kotlin {
+    sourceSets.all {
+        languageSettings.progressiveMode = true
+    }
 }
 
 dependencies {
