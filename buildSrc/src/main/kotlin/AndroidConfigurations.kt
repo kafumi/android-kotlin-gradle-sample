@@ -1,39 +1,18 @@
+import com.android.build.gradle.BaseExtension
 import org.gradle.api.JavaVersion
 import org.gradle.kotlin.dsl.KotlinBuildScript
 
 fun KotlinBuildScript.applyAndroidApp() {
     android {
-        compileSdkVersion(Versions.compileSdk)
-        buildToolsVersion(Versions.buildTools)
-        defaultConfig {
-            minSdkVersion(Versions.minSdk)
-            targetSdkVersion(Versions.targetSdk)
-        }
-        compileOptions {
-            sourceCompatibility = JavaVersion.VERSION_1_8
-            targetCompatibility = JavaVersion.VERSION_1_8
-        }
+        applyAndroidBase()
     }
 
-    kotlin {
-        sourceSets.all {
-            languageSettings.progressiveMode = true
-        }
-    }
+    enableKotlinProgressiveMode()
 }
 
 fun KotlinBuildScript.applyAndroidLibrary() {
     androidLibrary {
-        compileSdkVersion(Versions.compileSdk)
-        buildToolsVersion(Versions.buildTools)
-        defaultConfig {
-            minSdkVersion(Versions.minSdk)
-            targetSdkVersion(Versions.targetSdk)
-        }
-        compileOptions {
-            sourceCompatibility = JavaVersion.VERSION_1_8
-            targetCompatibility = JavaVersion.VERSION_1_8
-        }
+        applyAndroidBase()
         buildTypes {
             getByName("release") {
                 isMinifyEnabled = false
@@ -47,6 +26,23 @@ fun KotlinBuildScript.applyAndroidLibrary() {
         }
     }
 
+    enableKotlinProgressiveMode()
+}
+
+private fun BaseExtension.applyAndroidBase() {
+    compileSdkVersion(Versions.compileSdk)
+    buildToolsVersion(Versions.buildTools)
+    defaultConfig {
+        minSdkVersion(Versions.minSdk)
+        targetSdkVersion(Versions.targetSdk)
+    }
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+    }
+}
+
+private fun KotlinBuildScript.enableKotlinProgressiveMode() {
     kotlin {
         sourceSets.all {
             languageSettings.progressiveMode = true
