@@ -3,12 +3,11 @@ plugins {
     id("kotlin-android")
 }
 
+applyAndroidApp()
+
 android {
-    compileSdkVersion(Versions.compileSdk)
     defaultConfig {
         applicationId = "dev.kafumi.myapplication"
-        minSdkVersion(Versions.minSdk)
-        targetSdkVersion(Versions.targetSdk)
         versionCode = 1
         versionName = "1.0"
     }
@@ -18,18 +17,8 @@ android {
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
         }
     }
-    compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
-    }
     dataBinding {
         isEnabled = true
-    }
-}
-
-kotlin {
-    sourceSets.all {
-        languageSettings.progressiveMode = true
     }
 }
 

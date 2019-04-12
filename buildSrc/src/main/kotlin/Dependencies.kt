@@ -4,10 +4,10 @@ object Versions {
     const val buildTools = "28.0.3"
     const val minSdk = 21
     const val targetSdk = 28
-    const val androidGradle = "3.4.0-rc03"
+    const val androidGradle = "3.4.0-rc03" // Need to be synchronized with `buildSrc/build.gradle.kts`
 
     // Kotlin
-    const val kotlin = "1.3.21"
+    const val kotlin = "1.3.21" // Need to be synchronized with `buildSrc/build.gradle.kts`
 
     // Google libraries
     const val appCompat = "1.0.2"
