@@ -5,10 +5,10 @@ plugins {
 }
 
 android {
-    compileSdkVersion(28)
+    compileSdkVersion(Versions.compileSdk)
     defaultConfig {
-        minSdkVersion(21)
-        targetSdkVersion(28)
+        minSdkVersion(Versions.minSdk)
+        targetSdkVersion(Versions.targetSdk)
     }
     buildTypes {
         getByName("release") {
@@ -41,13 +41,13 @@ dependencies {
     implementation(project(":model"))
 
     // Kotlin
-    implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.3.21")
+    implementation(Deps.Kotlin.stdlibJdk)
 
     // AndroidX
-    implementation("androidx.appcompat:appcompat:1.0.2")
-    implementation("androidx.constraintlayout:constraintlayout:1.1.3")
-    implementation("androidx.lifecycle:lifecycle-extensions:2.0.0")
+    implementation(Deps.AndroidX.appCompat)
+    implementation(Deps.AndroidX.constraintLayout)
+    implementation(Deps.AndroidX.lifecycle)
 
     // Debug utilities
-    implementation("com.jakewharton.timber:timber:4.7.1")
+    implementation(Deps.Debug.timber)
 }

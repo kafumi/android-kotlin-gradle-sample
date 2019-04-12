@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    compileSdkVersion(28)
+    compileSdkVersion(Versions.compileSdk)
     defaultConfig {
         applicationId = "dev.kafumi.myapplication"
-        minSdkVersion(21)
-        targetSdkVersion(28)
+        minSdkVersion(Versions.minSdk)
+        targetSdkVersion(Versions.targetSdk)
         versionCode = 1
         versionName = "1.0"
     }
@@ -37,8 +37,8 @@ dependencies {
     implementation(project(":featureA"))
 
     // Kotlin
-    implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.3.21")
+    implementation(Deps.Kotlin.stdlibJdk)
 
     // Debug utilities
-    implementation("com.jakewharton.timber:timber:4.7.1")
+    implementation(Deps.Debug.timber)
 }

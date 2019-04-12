@@ -4,10 +4,10 @@ plugins {
 }
 
 android {
-    compileSdkVersion(28)
+    compileSdkVersion(Versions.compileSdk)
     defaultConfig {
-        minSdkVersion(21)
-        targetSdkVersion(28)
+        minSdkVersion(Versions.minSdk)
+        targetSdkVersion(Versions.targetSdk)
     }
     buildTypes {
         getByName("release") {
@@ -34,5 +34,5 @@ kotlin {
 
 dependencies {
     // Kotlin
-    implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.3.21")
+    implementation(Deps.Kotlin.stdlibJdk)
 }
