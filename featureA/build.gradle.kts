@@ -9,7 +9,6 @@ android {
     defaultConfig {
         minSdkVersion(21)
         targetSdkVersion(28)
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
         getByName("release") {
@@ -51,9 +50,4 @@ dependencies {
 
     // Debug utilities
     implementation("com.jakewharton.timber:timber:4.7.1")
-
-    // Test
-    testImplementation("junit:junit:4.12")
-    androidTestImplementation("androidx.test:runner:1.1.1")
-    androidTestImplementation("androidx.test.espresso:espresso-core:3.1.1")
 }
